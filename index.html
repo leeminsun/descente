@@ -1,0 +1,587 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <title>데상트골프 > ISSUE ITEM</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <link rel="stylesheet" href="http://descentegolf.froglamb.co.kr/resources/css/common.css" />
+    <link rel="stylesheet" href="http://descentegolf.froglamb.co.kr/resources/css/sub.css" />
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/jquery.selectbox-0.2.js"></script>
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/common.js"></script>
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/jwplayer.js"></script>
+    <!--[if ie]>
+    <script type="text/javascript" src="http://descentegolf.froglamb.co.kr/resources/js/html5.js"></script>
+    <![endif]-->
+    <!--[if !IE]><!--><script type="text/javascript">
+    if (/*@cc_on!@*/false) {
+        document.documentElement.className+=' ie10';
+    }
+</script><!--<![endif]-->
+    <script type="text/javascript">
+        function tabDetector() {
+            $("body").find(".tab").each(function(){
+                var tabCurrent = $(this).children(".selected").children("a").attr("href");
+                $(tabCurrent).css({display:"block"});
+            });
+        };
+        function tabOpener(e) {
+            var a = $(this).parent();
+            a.siblings().removeClass("selected");
+            b = a.attr("class");
+            a.addClass("selected");
+            c = a.children("a").attr("href");
+            a.parent(".tab").siblings(".tabContents").css({display:"none"});
+            $(c).css({display:"block"});
+            e.preventDefault();
+        };
+        function backgroundWindow() {
+            widthW = $(window).width(),
+                    $window = $(window),
+                    fromTop = $(document).scrollTop(),
+                    $start1 = $("#product1").offset().top,
+                    $start2 = $("#product2").offset().top,
+                    $start3 = $("#product3").offset().top;
+            if( widthW > 1024) {
+                $('#product1 .visual[data-type="background"]').each(function(){
+                    var $bgobj = $(this);
+                    $(window).scroll(function() {
+                        var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                        var coords = '50% '+ (yPos+80) + 'px';
+                        $bgobj.css({ backgroundPosition: coords });
+                    });
+                });
+                $('#product2 .visual[data-type="background"]').each(function(){
+                    var $bgobj = $(this);
+                    $(window).scroll(function() {
+                        var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                        var coords = '50% '+ (yPos+160) + 'px';
+                        $bgobj.css({ backgroundPosition: coords });
+                    });
+                });
+                $('#product3 .visual[data-type="background"]').each(function(){
+                    var $bgobj = $(this);
+                    $(window).scroll(function() {
+                        var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                        var coords = '50% '+ (yPos+470) + 'px';
+                        $bgobj.css({ backgroundPosition: coords });
+                    });
+                });
+                $('#product1 .visual').css({backgroundAttachment: "fixed"});
+                $('#product2 .visual').css({backgroundAttachment: "fixed"});
+                $('#product3 .visual').css({backgroundAttachment: "fixed"});
+            } else {
+                $('#product1 .visual[data-type="background"]').each(function(){
+                    var $bgobj = $(this);
+                    $(window).scroll(function() {
+                        $bgobj.css({ backgroundPosition: "50% 0" });
+                    });
+                });
+                $('#product2 .visual[data-type="background"]').each(function(){
+                    var $bgobj = $(this);
+                    $(window).scroll(function() {
+                        $bgobj.css({ backgroundPosition: "50% 0" });
+                    });
+                });
+                $('#product3 .visual[data-type="background"]').each(function(){
+                    var $bgobj = $(this);
+                    $(window).scroll(function() {
+                        $bgobj.css({ backgroundPosition: "50% 0" });
+                    });
+                });
+                $('#product1 .visual').css({backgroundAttachment: "scroll"});
+                $('#product2 .visual').css({backgroundAttachment: "scroll"});
+                $('#product3 .visual').css({backgroundAttachment: "scroll"});
+            }
+        }
+        function onScroll() {
+            $(window).on('mousewheel DOMMouseScroll', function(e){
+                var delta = e.originalEvent.wheelDelta || e.originalEvent.detail*-2
+                        ,topVal = $(document).scrollTop()
+                        ,moveVal = 20;
+                if (delta>0){
+                    topVal -= moveVal;
+                    if($("#snowgolf-product").css("display") == "block"){
+                        $(document).scrollTop(topVal);
+                    } else {
+                        $(document).scrollTop(topVal-40);
+                    }
+                }else{
+                    topVal += moveVal;
+                    if($("#snowgolf-product").css("display") == "block"){
+                        $(document).scrollTop(topVal);
+                        console.log(topVal);
+                    } else {
+                        $(document).scrollTop(topVal+40);
+                        console.log(topVal);
+                    }
+                }
+                /*$(document).scrollTop(topVal);
+                return false;*/
+            });
+        }
+        $(document).ready(function(){
+            tabDetector();
+            $(".tab li a").bind("click", tabOpener);
+            $('.basic_list dt').click(function(){
+                $(this).toggleClass('open').siblings('dt').removeClass('open');
+                $(this).next().stop().slideToggle(400).siblings('dd').stop().slideUp(400);
+            });
+
+            $("#product4 .button").click(function(e){
+                e.preventDefault();
+                $("#snowgolf-product").css({display:"none"});
+                $("#snowgolf-contest").css({display:"block"});
+                var aaa = $("#snowgolf .tabContents").offset().top;
+                console.log(aaa);
+                $("html, body").animate({scrollTop:aaa});
+                $(".tab li.c2").addClass("selected");
+                $(".tab li.c1").removeClass("selected");
+            });
+            /*$("#contest1 .button").click(function(e){
+             e.preventDefault();
+             alert("준비 중 입니다.");
+             });*/
+            backgroundWindow();
+            $(window).resize(function(){
+                backgroundWindow();
+            });
+            /*onScroll();
+            $(".tab li a").bind("click", onScroll);*/
+            var sliderPopup1 = $("#popup-product1 .carousel").bxSlider({
+                pager: false
+            });
+            var sliderPopup2 = $("#popup-product2 .carousel").bxSlider({
+                pager: false
+            });
+            var sliderPopup3 = $("#popup-product3 .carousel").bxSlider({
+                pager: false
+            });
+            $("#product1 .contents .btnPop").click(function(e){
+                e.preventDefault();
+                $("#popup-product1").css({opacity:1,zIndex:10001});
+                sliderPopup1.reloadSlider();
+                $("#dimd").css({display:"block"});
+            });
+            $("#product2 .contents .btnPop").click(function(e){
+                e.preventDefault();
+                $("#popup-product2").css({opacity:1,zIndex:10001});
+                sliderPopup2.reloadSlider();
+                $("#dimd").css({display:"block"});
+            });
+            $("#product3 .contents .btnPop").click(function(e){
+                e.preventDefault();
+                $("#popup-product3").css({opacity:1,zIndex:10001});
+                sliderPopup3.reloadSlider();
+                $("#dimd").css({display:"block"});
+            });
+            $(".pop_wrap.galleryPop .btn_close, #dimd").click(function(e){
+                e.preventDefault();
+                $(".pop_wrap.galleryPop").css({opacity:0,zIndex:-1});
+                $("#dimd").css({display:"none"});
+            });
+            $("#snowgolf-contest #contest2 a.button").click(function(e){
+                e.preventDefault();
+                $($(this).attr("href")).css({display:"block"});
+                $("#dimd").css({display:"block"});
+            });
+            $(".pop_wrap.infoPop .btn_close, #dimd").click(function(e){
+                e.preventDefault();
+                $(".pop_wrap.infoPop").css({display:"none"});
+                $("#dimd").css({display:"none"});
+            });
+        });
+        document.createElement("article");
+        document.createElement("section");
+    </script>
+
+    <script>
+        (function() {
+            var _fbq = window._fbq || (window._fbq = []);
+
+            if (!_fbq.loaded) {
+                var fbds = document.createElement('script');
+                fbds.async = true;
+                fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(fbds, s);
+                _fbq.loaded = true;
+            }
+
+            _fbq.push(['addPixelId', '765537316895455']);
+
+        })();
+
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=765537316895455&amp;ev=PixelInitialized" /></noscript>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+    <script>
+        var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+        for (var word in mobileKeyWords){
+            if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+                var nowURL = location.href;
+                var newURL = nowURL.replace("http://www.descentegolf.co.kr", "http://m.descentegolf.co.kr");
+                newURL = newURL.replace("http://descentegolf.co.kr", "http://m.descentegolf.co.kr");
+                newURL = newURL.replace("http://descente.froglamb.co.kr", "http://m.descente.froglamb.co.kr");
+
+                location.href = newURL;
+                break;
+            }
+        }
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59676198-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <header class="header_wrap">
+        <div class="header">
+            <div class="logo"><h1><a href="http://descentegolf.froglamb.co.kr/index.php"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/layout/img_logo.png" alt="" /></a></h1></div>
+            <div id="gnb" class="gnb">
+                <ul class="depth01">
+                    <li class="menu01"><a href="http://descentegolf.froglamb.co.kr/contents/brand/brand01.php">BRAND</a></li>
+                    <li class="menu02">
+                        <a href="http://descentegolf.froglamb.co.kr/contents/product/snowgolf.php">PRODUCT</a><!-- 2015-11-12 -->
+                        <!-- <ul class="depth02">
+                            <li><a href="http://descentegolf.froglamb.co.kr/contents/product/item01.php">ISSUE ITEM</a></li>
+                            <li><a href="http://descentegolf.froglamb.co.kr/contents/product/look01.php">LOOK</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="menu03"><a href="http://descentegolf.froglamb.co.kr/contents/player/player01.php">PLAYER</a></li>
+                    <li class="menu04">
+                        <a href="http://descentegolf.froglamb.co.kr/contents/field/field01.php">FIELD</a>
+                        <ul class="depth02">
+                            <li><a href="http://descentegolf.froglamb.co.kr/contents/field/field01.php">DSG FIELD ISSUE</a></li>
+                            <li><a href="http://descentegolf.froglamb.co.kr/contents/field/news01.php">NEWS &amp; EVENT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu05"><a href="http://descentegolf.froglamb.co.kr/contents/store/store01.php">STORE</a></li>
+                    <!-- 				<li class="menu06"><a href="http://descentegolf.froglamb.co.kr/contents/event/swingGuard/event.php">EVENT</a></li>
+                     -->
+                </ul>
+            </div>
+            <div class="utile">
+                <ul>
+                    <li><a href="http://goo.gl/peUd2U" target="_blank" title="e-shop 새창열림"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/icon/icon_eshop01.png" alt="e-shop" ></a></li><!-- 2015-02-16 링크수정 -->
+                    <li><a href="http://descentegolf.froglamb.co.kr/contents/service/faq01.php"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/icon/icon_contact01.png" alt="고객문의" /></a></li>
+                    <li><a href="https://www.facebook.com/DescentegolfKR" target="_blank" title="facebook 새창열림"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/icon/icon_facebook01.png" alt="페이스북" /></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- contents -->
+    <div class="item_wrap">
+        <div class="tab_bar">
+            <ul>
+                <li class="select"><a href="snowgolf.php">스노우골프</a></li>
+                <li><a href="zerotechpowerdown.php">제로테크파워저지다운</a></li>
+                <li><a href="zerotechpower.php">제로테크파워저지</a></li>
+                <li><a href="f360.php">F360</a></li>
+                <li><a href="swingguard.php">스윙가드</a></li>
+                <li><a href="breeze.php">브리즈</a></li>
+                <li><a href="brea3tream.php">브레스트림</a></li>
+                <li><a href="item01.php">테크파워저지</a></li>
+                <li><a href="item02.php">디스파이럴</a></li>
+            </ul>
+            <span class="prev"><a href="#">이전</a></span>
+            <span class="next"><a href="#">다음</a></span>
+        </div>		<section id="snowgolf">
+        <div class="main">
+            <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolf.png" alt="snow golf 겨울 시즌, 골프는 아닌 것이 아니라 다른 것이다. 올겨울, 지금과는 다른 골프를 경험할 때, 진정한 골퍼에게 겨울의 한계란 없다. 오직 스윙에만 집중하라. maximize your swing" />
+        </div>
+        <ul class="tab">
+            <li class="c2 selected">
+                <a href="#snowgolf-contest">SNOW GOLF EXPERIENCE</a>
+            </li>
+            <li class="c1">
+                <a href="#snowgolf-product">SNOW GOLF COLLECTION</a>
+            </li>
+        </ul>
+        <div id="snowgolf-contest" class="tabContents">
+            <div id="contest1">
+                <div class="contents">
+                    <div class="wrapper">
+                        <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfCon1.png" alt="2015 DESCENTE GOLF SNOW GOLF EXPERIENCE 2015.12.18~19 /  하이원C.C 겨울의 한계를 이겨낼 수 있다면, 봄을 기다릴 필요는 없다 설월의 필드에서 펼쳐지는 스노우골프 익스피리언스에 도전하라 적설량 및 본사사정에 따라 일정 변경될 수 있습니다." />
+                        <a href="https://docs.google.com/forms/d/1xm0Idy8ciCxfCxH3ryhwA9KvOGR3750OAVl4E68LLaU/viewform?c=0&w=1" target="_blank" class="button">신청하기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="contest2">
+                <div class="contents">
+                    <div class="wrapper">
+                        <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfCon2.png" alt="한번도 경험하지 못한 눈 속의 골프, 그 짜릿함을 데상트골프가 시작합니다." />
+                        <a href="#popup-contest1" class="button pop1">대회 소개 및 안내</a>
+                        <a href="#popup-contest2" class="button pop2">프로그램 안내</a>
+                        <a href="#popup-contest3" class="button pop3">참가 신청 안내</a>
+                    </div>
+                </div>
+            </div>
+            <div id="contest3">
+                <div class="contents">
+                    <div class="wrapper">
+                        <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfCon3.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div id="contest4">
+                <div class="contents">
+                    <div class="wrapper">
+                        <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfCon4.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- tabContents//end -->
+        <div id="snowgolf-product" class="tabContents">
+            <div id="product1">
+                <div class="visual" data-speed="30" data-type="background"></div>
+                <div class="contents">
+                    <div class="wrapper">
+                        <a href="#popup-product1" class="btnPop"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfPro1.png" alt="Snow golf 데상트골프의 스노우골프 라인은 자연의 한계를 뛰어넘고,새로운 도전과 열정을 바탕으로 완벽한 활동성과 보온성을 선사하여 겨울 골프 라운드에서도 완벽한 퍼포먼스를 구현할 수 있다." /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="product2">
+                <div class="visual" data-speed="20" data-type="background"></div>
+                <div class="contents">
+                    <div class="wrapper">
+                        <a href="#popup-product2" class="btnPop"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfPro2.png" alt="WINTER GOLF PERFORMANCE 언제까지 날씨 걱정만 할 것인가 최적화된 스윙으로 얼어있던 스코어의 틀을 부숴라 4WAY STRETCH 방수, 방풍, 경량 HEAT NAVI 레이저 컷팅 & 방수지퍼" /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="product3">
+                <div class="visual" data-speed="10" data-type="background"></div>
+                <div class="contents">
+                    <div class="wrapper">
+                        <a href="#popup-product3" class="btnPop"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfPro3.png" alt="SNOW GOLF LINE 움츠리지 말고 하얀 필드로 출발하라. 어떤 환경과 추위에서도 골프 퍼포먼스가 가능하도록. 스노우골프 라인의 혁신" /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="product4">
+                <div class="contents">
+                    <div class="wrapper">
+                        <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/img_snowgolfPro4.png" alt="2015 DESCENTE GOLF SNOW GOLF EXPERIENCE 겨울의 한계를 이겨낼 수 있다면, 봄을 기다릴 필요는 없다. 겨울에만 찾아오는 색다른 골프, 스노우골프에 참가하세요." />
+                        <a href="#none" class="button">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- tabContents//end -->
+    </section>
+    </div>
+    <!-- //contents -->
+    <div id="popup-product1" class="pop_wrap galleryPop">
+        <div class="contents">
+            <div class="carousel">
+                <div class="item0">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_1.jpg" alt="확대 컷" />
+                </div>
+                <div class="item1">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_2.jpg" alt="확대 컷" />
+                </div>
+                <div class="item2">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_3.jpg" alt="확대 컷" />
+                </div>
+                <div class="item3">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_4.jpg" alt="확대 컷" />
+                </div>
+                <div class="item4">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_5.jpg" alt="확대 컷" />
+                </div>
+                <div class="item5">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_6.jpg" alt="확대 컷" />
+                </div>
+                <div class="item6">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf01_7.jpg" alt="확대 컷" />
+                </div>
+            </div>
+        </div>
+        <a href="#none" class="btn_close"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/btn_popClose.png" alt="창닫기" /></a>
+    </div>
+    <div id="popup-product2" class="pop_wrap galleryPop">
+        <div class="contents">
+            <div class="carousel">
+                <div class="item0">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf02_1.jpg" alt="확대 컷" />
+                </div>
+                <div class="item1">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf02_2.jpg" alt="확대 컷" />
+                </div>
+                <div class="item2">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf02_3.jpg" alt="확대 컷" />
+                </div>
+                <div class="item3">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf02_4.jpg" alt="확대 컷" />
+                </div>
+                <div class="item4">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf02_5.jpg" alt="확대 컷" />
+                </div>
+            </div>
+        </div>
+        <a href="#none" class="btn_close"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/btn_popClose.png" alt="창닫기" /></a>
+    </div>
+    <div id="popup-product3" class="pop_wrap galleryPop">
+        <div class="contents">
+            <div class="carousel">
+                <div class="item0">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_1.jpg" alt="확대 컷" />
+                </div>
+                <div class="item1">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_2.jpg" alt="확대 컷" />
+                </div>
+                <div class="item2">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_3.jpg" alt="확대 컷" />
+                </div>
+                <div class="item3">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_4.jpg" alt="확대 컷" />
+                </div>
+                <div class="item4">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_5.jpg" alt="확대 컷" />
+                </div>
+                <div class="item5">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_6.jpg" alt="확대 컷" />
+                </div>
+                <div class="item6">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_7.jpg" alt="확대 컷" />
+                </div>
+                <div class="item7">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_8.jpg" alt="확대 컷" />
+                </div>
+                <div class="item8">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_9.jpg" alt="확대 컷" />
+                </div>
+                <div class="item9">
+                    <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf03_10.jpg" alt="확대 컷" />
+                </div>
+            </div>
+        </div>
+        <a href="#none" class="btn_close"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/btn_popClose.png" alt="창닫기" /></a>
+    </div>
+    <div id="popup-contest1" class="pop_wrap infoPop">
+        <div class="contents">
+            <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf04_1.jpg" alt="대회 소개 및 안내" />
+            <a href="http://www.high1.com/roadMapGuide/html.high1?tab=1#contentPoint" class="button" target="_blank">찾아 오시는 길</a>
+        </div>
+        <a href="#none" class="btn_close"></a>
+    </div>
+    <div id="popup-contest2" class="pop_wrap infoPop">
+        <div class="contents">
+            <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf05_1.jpg" alt="프로그램 안내" />
+        </div>
+        <a href="#none" class="btn_close"></a>
+    </div>
+    <div id="popup-contest3" class="pop_wrap infoPop">
+        <div class="contents">
+            <img src="http://descentegolf.froglamb.co.kr/resources/URLImage/sub/pop_snowgolf06_1.jpg" alt="참가 신청 안내" />
+            <a href="mailto:taek@descente.co.kr" target="_blank" class="button c1">taek@descente.co.kr</a>
+            <a href="mailto:ktkim@capeon.co.kr" target="_blank" class="button c2">ktkim@capeon.co.kr</a>
+        </div>
+        <a href="#none" class="btn_close"></a>
+    </div>
+    <div id="dimd"></div>
+    <!-- footer -->
+    <footer>
+        <section class="address">
+            <div>
+                <div class="info">
+                    <!-- <h1><a href="http://descentegolf.froglamb.co.kr/index.php"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/layout/foot_logo02.gif" alt="데쌍트" /></a></h1>2015-02-24 이미지변경 -->
+                    <h1><a href="http://descentegolf.froglamb.co.kr/index.php"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/layout/foot_logo01.png" alt="데쌍트" /></a></h1>
+                    <address>
+                        <ul>
+                            <li>서울특별시 강남구 테헤란로 142, 16층 (역삼동,캐피탈타워)</li>
+                            <li>
+                                <dl>
+                                    <dt>대표이사 :</dt>
+                                    <dd>김훈도,</dd>
+                                </dl>
+                                <dl class="double">
+                                    <dt>대표번호 :</dt>
+                                    <dd>080-565-5600</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>사업자등록번호 :</dt>
+                                    <dd>220-86-01214</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>통신판매업신고번호 :</dt>
+                                    <dd>제2009-서울강남-02097</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>개인정보관리책임자 :</dt>
+                                    <dd>최대환 부장</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="site_map">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>DESCENTE GOLF</dt>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/brand/brand01.php">BRAND</a></dd>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/product/breeze.php">PRODUCT</a></dd><!-- 2015-05-20 -->
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/player/player01.php">PLAYER</a></dd>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/field/field01.php">FIELD</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>SERVICE</dt>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/store/store01.php">STORE</a></dd>
+                                <dd><a href="http://goo.gl/peUd2U" target="_blank" title="e-shop 새창열림">E-SHOP</a></dd><!-- 2015-02-16 링크수정 -->
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/service/faq01.php">대리점 개설문의</a></dd>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/service/faq01.php">FAQ</a></dd>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/service/qna01.php">Q&amp;A</a></dd>
+                                <dd><a href="http://descentegolf.froglamb.co.kr/contents/service/faq01.php?p=as">AS안내</a></dd>
+                                <dd><a href="http://shop.descentekorea.co.kr/policyView.do?policy=2" target="_blank" title="개인정보처리방침 새창열림">개인정보처리방침</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>FAMILY SITE</dt>
+                                <dd><a href="http://www.descentekorea.co.kr" target="_blank" title="DESCENTE KOREA 새창열림">DESCENTE KOREA</a></dd>
+                                <dd><a href="http://www.descente.co.kr" target="_blank" title="DESCENTE 새창열림">DESCENTE</a></dd>
+                                <dd><a href="http://www.descentekorea.co.kr/brand/skins.asp" target="_blank" title="DESCENTE 새창열림">SKINS</a></dd>
+                            </dl>
+                            <dl class="double">
+                                <dt>FOLLOW</dt>
+                                <dd><a href="https://www.facebook.com/DescentegolfKR" target="_blank" title="facebook 새창열림">FACEBOOK</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="e_shop"><a href="http://goo.gl/peUd2U" target="_blank" title="e-shop 새창열림"><img src="http://descentegolf.froglamb.co.kr/resources/URLImage/layout/foot_eshop01.png" alt="E-SHOP" /></a></section><!-- 2015-02-16 링크수정 -->
+        <section class="copy">
+            <p>COPYRIGHT ⓒ 2015 DESCENTE KOREA LTD. ALL RIGHTS RESERVED</p>
+        </section>
+    </footer>
+    <!-- //footer -->
+
+</div>
+<!-- //wrap -->
+</body>
+</html>
+
