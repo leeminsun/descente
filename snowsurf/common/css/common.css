@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import "layout.css";
+@import "table.css";
+/* ------------------------------------------------------------
+ * Name     : common.css
+ * Desc     :
+ * Created  : 2015-11-19 PentaBreed by tttboram
+ * Updated  : 2015-11-19 PentaBreed by tttboram
+ ------------------------------------------------------------ */
+
+/* Type Selector */
+*{margin:0; padding:0; font-family: Dotum, Arial, Gulim, AppleGothic, Sans-serif;color:#777;}
+body{font-size:12px; line-height:1.5em;}
+img{border:0; display:block;}
+img, fieldset, button{border:none;}
+hr, button img{display:none;}
+li{padding:0;margin:0;list-style:none;}
+a{text-decoration:none; color:#777;}
+a:visited{color:#999;}
+a:hover, a:active, a:focus{text-decoration:none;}
+textarea{overflow:auto;font-size:1em;width:95%;min-height:80px;}
+html:first-child select{padding-right:6px; height:20px;} /* Opera 9 & Below Fix */
+option {padding-right:6px;} /* Firefox Fix */
+legend, .atl {position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;} /* For Screen Reader */
+td label{margin-right:10px;}
+
+/* .alt : 대체텍스트용 */
+.comment{text-indent:-10000px;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;}
+
+/* input */
+input{vertical-align:middle;}
+input.text{border:1px solid #e2e2e2;padding:5px;line-height:1em;}
+textarea{border:1px solid #ddd; padding:10px;}
+
+.btnArea{text-align:right;margin-top:8px;}
+.btnType1{font-weight:bold;color:#393B40;border:0;padding:5px 15px;background:#e1e2e5;cursor:pointer;}/* gry bg Btn*/
+.btnType1:hover{background:#bbbcbf;}
+.btnType2{font-weight:bold;color:#fff;border:0;padding:5px 15px;background:#00b5c8;cursor:pointer;}/* blue bg Btn*/
+.btnType2:hover{background:#008391;}
+.btnType3{font-weight:bold;color:#fff;border:0;padding:5px 15px;background:#4a4a4a;cursor:pointer;}/* black bg Btn*/
+.subBtn{float:left;margin-right:10px;}
+
+
+input.bigSize{width:63px;height:43px;}/* black bg Btn*/

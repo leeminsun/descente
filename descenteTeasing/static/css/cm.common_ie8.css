@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/****************************************/
+/*	Name: Descente
+/*	PART: SITE COMMON STYLE
+/*	Version: 1.0
+/*	Author: 최웅
+/****************************************/
+
+.front{display:block}
+.back{display:none}
+
+.visual:hover .front{display:none}
+.visual:hover .back{display:block}
+
+.bg_on{clip: auto !important;}
+
+.msk03{margin-left:100px !important;}
+.msk04{margin-right:100px !important;}
+.skip_btn, .skip_btn:hover{cursor: pointer}
+.skip_btn_img{display:block;position:absolute;bottom:64px;left:50%;margin-left:-62px;}
+
+.technology_03 .tit.edge, .technology_03 .txt.edge{display:none;}
+.technology_03 .tit.ie8, .technology_03 .txt.ie8{display:block;}
+.technology_03 .tit.ie8{margin-left:147px;}

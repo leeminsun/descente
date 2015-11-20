@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Descente</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/cm.import.css" />
+	<!--[if lt IE 9]><script src="/static/js/html5.js"></script><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/static/css/cm.common_ie8.css" /><![endif]-->
+  <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.mousewheel.js"></script>
+    <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+<!--	<script type="text/javascript" src="/static/js/intro.js"></script>-->
+<!--    <scrip src="/static/js/video.js-master/src/js/video.js"></scrip>-->
+  <script type="text/javascript" src="/static/js/wParallax.js"></script>
+	<script type="text/javascript" src="/static/js/story.js"></script>
+
+
+    <script type="text/javascript">
+	//모바일 접근시 모바일로 링크
+	var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'LG', 'MOT', 'Nokia', 'NOKIA', 'SAMSUNG', 'SonyEricsson', 'Mobile', 'IEMobile', 'PPC', 'Windows Phone', 'CANU', 'Opera Mini', 'Android');
+	for (var word in mobileKeyWords){
+		if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+			if(mobileKeyWords[word] == "Android"){
+				if (navigator.userAgent.match('Mobile') == null) continue
+			}
+			location.href="/index_m.html";
+			//location.href="index_m.html";
+			break;
+		}
+	}
+
+
+</script>
+<!--[if lte IE 8]>
+<script>
+   $(function(){
+       setTimeout(function(){
+       if($('.skip_btn').css('display') != 'none'){
+            jQuery.nextFunc();
+       }
+    },10000)
+   })
+</script>
+<![endif]-->
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69475871-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</head>
+<body>
+  <div id="wrap" class="main">
+	<h1><a href="#top"><img src="/static/images/descente_bi.png" alt="descente BI"></a></h1>
+
+  	<div id="snb_area" class="main">
+  		<ol id="snb_main">
+  			<li id="slide_btn1" class="on"><a href="#slide1"><img src="/static/images/snbLi_tit01.png" alt="technology" /></a></li>
+  			<li id="slide_btn2"><a href="#slide2"><img src="/static/images/snbLi_tit02.png" alt="product" /></a></li>
+  			<li id="slide_btn3"><a href="#slide3"><img src="/static/images/snbLi_tit03.png" alt="story" /></a></li>
+  		</ol>
+  	</div>
+
+
+
+  	<div id="slide1" class="parallax bg on">
+  	    <a href="#" class="skip_btn">
+  	        <span id="myImg" class="skip_btn_img"><img src="/static/images/skip_btn2.png" alt="skip"></span>
+  	    </a>
+
+        <div id="player">
+            <video width="100%" height="auto" preload="auto" id="intro-video" autoplay="autoplay">
+              <source src="http://f360down.descente.co.kr/static/mov/intro.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+<!--              <source src="/static/mov/intro-video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>-->
+
+              <source src="/static/mov/main.ogv" type="video/ogg">
+
+              <object id="flashMov" type="application/x-shockwave-flash"
+                    data="/static/mov/main.swf"
+                    width="100%" height="100%">
+                <param name='allowScriptAccess' value='always' />
+                <param name="movie" value="/static/mov/main.swf" />
+                <param name="quality" value="high" />
+                <param name="allowFullScreen" value="true" />
+                <param name="wmode" value="transparent" />
+
+             </object>
+
+            </video>
+
+        </div>
+
+
+        <div class="technology_wrap">
+
+	      <h2 class="hide">Technology</h2>
+
+	      <ul>
+	        <li class="technology_01">
+	          <div>
+	          	<h3 class="tit"><img src="/static/images/technology_tit01.png" alt="F360 O.P.S. DOWN"></h3>
+							<p class="txt"><img src="/static/images/technology_txt01.png" alt="국내 최초 한 판으로 접어 만든 다운자켓, F360 DOWN은
+							O.P.S. 시스템을 통해 DOWN의 새로운 패러다임을 제시합니다."></p>
+
+	          </div>
+	        </li>
+	        <li class="technology_02">
+						<h3 class="tit"><img src="/static/images/technology_tit02.png" alt="Origami Pattern Structure"></h3>
+						<p class="txt"><img src="/static/images/technology_txt02.png" alt="F360 O.P.S SYSTEM의 O는 Origami의 약자로 종이접기를 뜻하며
+국내 최초로 적용된 데상트만의 NEW TECHNOLOGY 입니다."></p>
+
+	        </li>
+	        <li class="technology_03">
+						<h3 class="tit edge"><img src="/static/images/technology_tit03.png" alt="한 판을 접어 절개를 최소화"></h3>
+						<h3 class="tit ie8"><img src="/static/images/technology_tit03_ie8.png" alt="한 판을 접어 절개를 최소화"></h3>
+						<p class="txt edge"><img src="/static/images/technology_txt03.png" alt="한 판을 접은 O.P.S SYSTEM을 통해
+제품의 절개를 최소화하여 방풍, 방한은 물론
+저항 없는 최상의 움직임을 완성합니다."></p>
+                        <p class="txt ie8"><img src="/static/images/technology_txt03_ie8.png" alt="한 판을 접은 O.P.S SYSTEM을 통해
+제품의 절개를 최소화하여 방풍, 방한은 물론
+저항 없는 최상의 움직임을 완성합니다."></p>
+
+	        </li>
+	        <li class="technology_04">
+
+						<h3 class="tit"><img src="/static/images/technology_tit04.png" alt="MOTION TECHNOLOGY Inspired by SKI"></h3>
+						<p class="txt"><img src="/static/images/technology_txt04.png" alt="SKI에 영감을 받아 탄생한 제품으로
+SKI를 위한 최상의 움직임과
+겨울철 최적의 보온성을 구현함으로써
+SKI와 LIFE SCENE을 동시에 만족 시킵니다."></p>
+
+
+	        </li>
+	      </ul>
+				<div class="msk msk01"></div>
+
+				<div class="msk msk03"></div>
+				<div class="msk msk04"></div>
+				<div class="visual_wrap">
+						<p class="visual visual_01"></p>
+						<p class="visual visual_02"></p>
+						<p class="visual visual_03"></p>
+				</div>
+
+				<div class="sub_lnb">
+		      <ol>
+						<li class="on"><a href="#"><span class="hide">1</span></a></li>
+		        <li><a href="#"><span class="hide">2</span></a></li>
+		        <li><a href="#"><span class="hide">3</span></a></li>
+		        <li><a href="#"><span class="hide">4</span></a></li>
+		      </ol>
+					<a href="#" class="prev"><span class="hide">prev</span></a>
+					<a href="#" class="next"><span class="hide">next</span></a>
+				</div>
+
+	    </div>
+	    <!-- // technology_wrap -->
+  	</div><!-- //slide1 -->
+
+  	<div id="slide2" class="parallax bg">
+			<div class="product_wrap">
+	      <h2 class="hide">Technology</h2>
+	      <!-- <img src="/static/images/techonolohy_img01.png" alt=""> -->
+				<div class="product_over"><img src="/static/images/product_over.png" alt="MOTION TECH.를 실현한 어깨엠보
+				방수 지퍼로 방수/방풍
+				등판 다운 챔버를 통한 방한 기능 향상
+				추가적인 핸드 워머로 겨울 스포츠에 최적화 다양한 소지품 수납 가능한 멀티 포켓 기능
+				얼굴,목 한기를 방어하는 기모 소재.
+				스트레치성 안감으로 착용감 및 활동성 우수
+				"></div>
+	      <ul>
+					<li class="product_01">
+
+						<div id="player5"></div>
+					</li>
+
+	        <li class="product_02">
+
+			            <ul class="product_select">
+							<li class="product_select01 on">
+							    <a href="#"><span class="select_txt">
+							        <img src="/static/images/white_txt.png" alt="white">
+							     </span></a>
+
+							</li>
+							<li class="product_select02">
+							    <a href="#"><span class="select_txt">
+							        <img src="/static/images/black_txt.png" alt="black">
+							     </span></a>
+
+							</li>
+							<li class="product_select03">
+    							<a href="#"><span class="select_txt">
+							        <img src="/static/images/char_txt.png" alt="charcoal gray">
+							     </span></a>
+
+							</li>
+							<li class="product_select04">
+							    <a href="#"><span class="select_txt">
+							        <img src="/static/images/pattern_txt.png" alt="pattern">
+							     </span></a>
+
+							</li>
+							<li class="product_select05">
+							    <a href="#"><span class="select_txt">
+							        <img src="/static/images/woman_black.png" alt="woman_black">
+							     </span></a>
+
+							</li>
+							<li class="product_select06">
+							    <a href="#"><span class="select_txt">
+							        <img src="/static/images/woman_white.png" alt="woman_white">
+							     </span></a>
+
+							</li>
+						</ul>
+						<ul class="visual">
+							<li>
+                                <div class="front">
+                                    <img src="/static/images/product_select04_f.png" alt="white descent 남성 제품 앞면">
+                                </div>
+                                <div class="back">
+                                    <img src="/static/images/product_select04_b.png" alt="white descent 남성 제품 뒷면">
+                                </div>
+							</li>
+                            <li>
+                                <div class="front">
+                                    <img src="/static/images/product_select03_f.png" alt="black descent 남성 제품 앞면">
+                                </div>
+                                <div class="back">
+                                    <img src="/static/images/product_select03_b.png" alt="black descent 남성 제품 뒷면">
+                                </div>
+							</li>
+                            <li>
+                                <div class="front">
+                                    <img src="/static/images/product_select02_f.png" alt="navy descent 남성 제품 앞면">
+                                </div>
+                                <div class="back">
+                                    <img src="/static/images/product_select02_b.png" alt="navy descent 남성 제품 뒷면">
+                                </div>
+							</li>
+                            <li>
+                                <div class="front">
+                                    <img src="/static/images/product_select01_f.png" alt="sprite descent 남성 제품 앞면">
+                                </div>
+                                <div class="back">
+                                    <img src="/static/images/product_select01_b.png" alt="sprite descent 남성 제품 뒷면">
+                                </div>
+							</li>
+                            <li>
+                                <div class="front">
+                                    <img src="/static/images/product_select05_f.png" alt="black descent 여성 제품 앞면">
+                                </div>
+                                <div class="back">
+                                    <img src="/static/images/product_select05_b.png" alt="black descent 여성 제품 뒷면">
+                                </div>
+							</li>
+                            <li>
+                                <div class="front">
+                                    <img src="/static/images/product_select06_f.png" alt="white descent 여성 제품 앞면">
+                                </div>
+                                <div class="back">
+                                    <img src="/static/images/product_select06_b.png" alt="white descent 여성 제품 뒷면">
+                                </div>
+							</li>
+
+						</ul>
+                <div class="bg"></div>
+
+	        </li>
+
+
+	        <li class="product_03">
+						<h3 class="tit"><img src="/static/images/product_tit01.png" alt="Shoulder EMBO"></h3>
+						<p class="txt"><img src="/static/images/product_txt01.png" alt="F360 OPS DOWN만의 시그니쳐.
+한 판을 접어 만들었기 때문에
+팔 부분에 절개선이 없어
+MOTION TECHNOLOGY를 실현한다."></p>
+						<div class="bg_on"></div>
+						<div class="bg"></div>
+
+	        </li>
+	        <li class="product_04">
+						<h3 class="tit"><img src="/static/images/product_tit02.png" alt="DOWN Chamber"></h3>
+						<p class="txt"><img src="/static/images/product_txt02.png" alt="F360 OPS DOWN은
+등판 전체가 다운 챔버로 되어 다운이 밑으로 쳐지거나
+퍼지지 않도록 설계하였을 뿐 아니라 원단을 한번 더 감싸
+퀄팅선을 통해 방수 및 방품 기능을 더하였다.
+"></p>
+						<p class="imgBox"><img src="/static/images/product_img04.png" alt=""></p>
+						<div class="bg_on"></div>
+						<div class="bg"></div>
+	        </li>
+					<li class="product_05">
+						<h3 class="tit"><img src="/static/images/product_tit03.png" alt="Stretch Textile"></h3>
+						<p class="txt"><img src="/static/images/product_txt03.png" alt="최적의 움직임을 위해 신축 소재를 안감으로
+사용함으로써 편안한 착용감을 구현한다."></p>
+						<p class="imgBox"><img src="/static/images/product_img04_2.png" alt=""></p>
+						<div class="bg_on"></div>
+						<div class="bg"></div>
+	        </li>
+	        <li class="product_06">
+						<ol>
+							<li class="product_0601">
+								<strong><img src="/static/images/product_txt04.png" alt="" /></strong>
+								<span><img src="/static/images/product_img05.png" alt="" /></span>
+							</li>
+							<li class="product_0602">
+								<strong><img src="/static/images/product_txt05.png" alt="" /></strong>
+								<span><img src="/static/images/product_img06.png" alt="" /></span>
+							</li>
+							<li class="product_0603">
+								<strong><img src="/static/images/product_txt06.png" alt="" /></strong>
+								<span><img src="/static/images/product_img07.png" alt="" /></span>
+							</li>
+							<li class="product_0604">
+								<strong><img src="/static/images/product_txt07.png" alt="" /></strong>
+								<span><img src="/static/images/product_img08.png" alt="" /></span>
+							</li>
+							<li class="product_0605">
+								<strong><img src="/static/images/product_txt09.png" alt="" /></strong>
+								<span><img src="/static/images/product_img09.png" alt="" /></span>
+							</li>
+						</ol>
+<!--						<p class="tit"><img src="/static/images/product_txt10.png" alt="SKI와 LIFE SCENE을 동시에 만족시키다"></p>-->
+						<div class="bg"></div>
+	        </li>
+					<li class="product_07">
+						<h3 class="tit"><img src="/static/images/product_tit04.png" alt="저항 없는 움직임,
+한 판으로 완성되다"></h3>
+						<p class="txt"><img src="/static/images/product_txt08.png" alt="F360 O.P.S. DOWN"></p>
+						<p class="product_btn"><a href="http://shop.descentekorea.co.kr/event/detail.do?seq=4864" target="_blank"><img src="/static/images/product_btn.png" alt="구매하기"></a></p>
+						<div class="bg"></div>
+
+	        </li>
+	      </ul>
+				<div class="sub_lnb">
+		      <ol>
+		        <li class="on"><a href="#"><span class="hide">1</span></a></li>
+		        <li><a href="#"><span class="hide">2</span></a></li>
+		        <li><a href="#"><span class="hide">3</span></a></li>
+		        <li><a href="#"><span class="hide">4</span></a></li>
+						<li><a href="#"><span class="hide">5</span></a></li>
+						<li><a href="#"><span class="hide">6</span></a></li>
+						<li><a href="#"><span class="hide">7</span></a></li>
+		      </ol>
+					<a href="#" class="prev"><span class="hide">prev</span></a>
+					<a href="#" class="next"><span class="hide">next</span></a>
+				</div>
+	    </div>
+	    <!-- // product_wrap -->
+
+
+  	</div><!-- //slide2 -->
+
+  	<div id="slide3" class="parallax bg bg01">
+			<div class="story_wrap">
+
+				  <div class="contents">
+
+					<!-- 영상 영역 -->
+					<ul class="story_mov">
+						<li class="story_mov01 on1">
+							<a href="#slide3">
+								<p class="txt"><img src="/static/images/story_bg01txt.png" alt="GIANT HOOP"></p>
+								<p class="bg"><img src="/static/images/story_bg01.jpg" alt="첫번째 영상 썸네일"></p>
+							</a>
+
+							<div id="player2">
+
+							</div>
+<!--							<div class="player_bg"></div>-->
+						</li>
+						<li class="story_mov02 on1">
+							<a href="#slide3">
+								<p class="txt"><img src="/static/images/story_bg02txt.png" alt="ICE HOCKEY"></p>
+								<p class="bg"><img src="/static/images/story_bg02.jpg" alt="두번째 영상 썸네일"></p>
+							</a>
+
+							<div id="player3">
+
+							</div>
+<!--							<div class="player_bg"></div>-->
+						</li>
+						<li class="story_mov03 on1">
+							<a href="#slide3">
+								<p class="txt"><img src="/static/images/story_bg03txt.png" alt="PAPER WINGS"></p>
+								<p class="bg"><img src="/static/images/story_bg03.jpg" alt="세번째 영상 썸네일"></p>
+							</a>
+
+							<div id="player4">
+
+							</div>
+<!--							<div class="player_bg"></div>-->
+						</li>
+					</ul>
+					<a href="#" class="scroll_btn"><img src="/static/images/scroll_btn.png" alt="scroll"></a>
+					<ul class="story_img">
+						<li class="story_img01">
+							<div id="leftCont" class="cont">
+								<div class="obj blueBg">
+									<img src="/static/images/story01img01.png" alt="">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story01img03.png" alt="GIANT HOOP 썸네일">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story01img05.png" alt="GIANT HOOP 썸네일">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story01img07.png" alt="GIANT HOOP 썸네일">
+								</div>
+							</div>
+
+							<div id="rightCont" class="cont">
+								<div class="obj">
+									<img src="/static/images/story01img02.png" alt="GIANT HOOP 썸네일">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story01img04.png" alt="GIANT HOOP 썸네일">
+								</div>
+								<div class="obj grayBg">
+									<img src="/static/images/story01img06.png" alt="">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story01img08.png" alt="GIANT HOOP 썸네일">
+								</div>
+							</div>
+
+						</li>
+						<li class="story_img02">
+							<div id="leftCont" class="cont">
+								<div class="obj">
+									<img src="/static/images/story02img01.png" alt="ICE HOCKEY 썸네일">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story02img03.png" alt="ICE HOCKEY 썸네일">
+								</div>
+
+
+							</div>
+
+							<div id="rightCont" class="cont">
+								<div class="obj blueBg">
+									<img src="/static/images/story02img02.png" alt="">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story02img04.png" alt="ICE HOCKEY 썸네일">
+								</div>
+								<div class="obj blueBg">
+									<img src="/static/images/story02img06.png" alt="ICE HOCKEY 썸네일">
+								</div>
+
+							</div>
+
+						</li>
+						<li class="story_img03">
+							<div id="leftCont" class="cont">
+								<div class="obj">
+									<img src="/static/images/story03img01.png" alt="PAPER WINGS 썸네일">
+								</div>
+								<div class="obj grayBg">
+									<img src="/static/images/story03img03.png" alt="PAPER WINGS 썸네일">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story03img05.png" alt="PAPER WINGS 썸네일">
+								</div>
+
+							</div>
+
+							<div id="rightCont" class="cont">
+								<div class="obj blueBg">
+									<img src="/static/images/story03img02.png" alt="">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story03img04.png" alt="PAPER WINGS 썸네일">
+								</div>
+								<div class="obj">
+									<img src="/static/images/story03img06.png" alt="PAPER WINGS 썸네일">
+								</div>
+
+							</div>
+
+						</li>
+					</ul>
+
+
+				  </div>
+				</div>
+
+				<ul class="story_link">
+				    <li class="story_link01">
+                      <a href="#slide3">
+                          <div class="thum_wrap">
+                              <div class="view">
+                                   <img src="/static/images/product_sum_view.png" alt="view">
+                               </div>
+                               <div class="txt">
+                                   <img src="/static/images/product_sum01_txt.png" alt="giant hoop">
+                               </div>
+                          </div>
+                          <div class="btn">
+                            <img src="/static/images/product_sum01.jpg" alt="giant hoop 영상 바로보기">
+                        </div>
+                        </a>
+				    </li>
+				    <li class="story_link02 on">
+                       <a href="#slide3">
+                         <div class="thum_wrap">
+                              <div class="view">
+                                   <img src="/static/images/product_sum_view.png" alt="view">
+                               </div>
+                               <div class="txt">
+                                   <img src="/static/images/product_sum02_txt.png" alt="ice hockey">
+                               </div>
+                           </div>
+                           <div class="btn">
+                               <img src="/static/images/product_sum02.jpg" alt="ice hockey 영상 바로보기">
+                            </div>
+                        </a>
+				    </li>
+				    <li class="story_link03 on">
+                       <a href="#slide3">
+                         <div class="thum_wrap">
+                              <div class="view">
+                                   <img src="/static/images/product_sum_view.png" alt="view">
+                               </div>
+                               <div class="txt">
+                                   <img src="/static/images/product_sum03_txt.png" alt="paper wings">
+                               </div>
+                           </div>
+                           <div class="btn">
+                               <img src="/static/images/product_sum03_2.jpg" alt="paper wings 영상 바로보기">
+                            </div>
+                        </a>
+				    </li>
+				</ul>
+				<div class="top_wrap"><a href="#slide3"><img src="/static/images/product_top.png" alt="top"></a></div>
+			</div>
+			<!-- // story_wrap -->
+
+  	</div><!-- //slide3 -->
+
+
+
+  </div>
+</body>
+</html>

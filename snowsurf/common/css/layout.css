@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* ------------------------------------------------------------
+ * Name     : layout.css
+ * Desc     :
+ * Created  : 2015-11-19 PentaBreed by tttboram
+ * Updated  : 2015-11-19 PentaBreed by tttboram
+ ------------------------------------------------------------ */
+
+/* Layout */
+#wrap{width:100%; height:100%;}
+.section{width:100%;}
+.section .contImg{width:100%; height:auto; display:block;}
+	#introBox{display:inline-block; width:100%; height:100%; background:url(../../images/intro_bg.jpg) no-repeat center center; background-size:cover; text-indent:-999999px; font-size:0;}
+	.mo1{width:100%; height:100%; display:block;}
+	.mo1 .middleTxt{margin:0 auto;}
+
+	#pageChange{position:fixed; top:0; left:-2000px; width:100%; height:100%; transition:all 0.2s ease-in-out;}
+	#pageChange:before{content:""; background:#fff; width:100%; height:100%; position:absolute; top:0; left:0;}
+	#pageChange .square1{width:1500px; height:100%; background:#ccc; position:absolute; top:0; left:-2000px; transition:all 1.8s ease-in-out; transform:skew(-40deg,0);}
+	#pageChange .square2{width:800px; height:100%; background:#4b1416; position:absolute; top:0; left:-2000px; transition:all 1.5s ease-in-out; transition-delay:0.2s; transform:skew(-40deg,0);}/*red*/
+	#pageChange .square3{width:800px; height:100%; background:#43411e; position:absolute; top:0; left:-2000px; transition:all 1.5s ease-in-out; transition-delay:0.3s; transform:skew(-40deg,0);}/*green*/
+	/*#pageChange.play{background:#f00; width:0; left:-10%;transition-delay:1.8s;}
+	#pageChange.play .square1{left:130%;width:400px;}
+	#pageChange.play .square2{left:130%;width:400px;}
+	#pageChange.play .square3{left:130%;width:200px;}*/
