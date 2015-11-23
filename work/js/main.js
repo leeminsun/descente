@@ -7,7 +7,7 @@ $(document).ready(function(){
 	}
 	function intro() {
 		$("#pre-button").fadeIn(1500);
-		
+		var r = Raphael("holder", "100%", "100%");
 		setTimeout(function(){
 			//imgae
 			/* 이미지를 이쁘게 조절할수가 없음 ^^
@@ -20,31 +20,30 @@ $(document).ready(function(){
 			})();
 			*/
 			// box3
-			var r = Raphael("holder", "100%", "100%");
 			(function () {
-				var path1 = "M0,0l100,0 -200,1080 -100,0";
+				var path1 = "M-200,0l200,0 -1000,1080 -200,0";
 				var el = r.path(path1).attr({fill: "#242811", stroke:"none"}),
-					elattrs = [{transform: "t6000,8r0s60"}, {transform: ""}]
+					elattrs = [{transform: "t6000,8r0s60"}, {transform: ""}],
 					now = 1;
-					el.stop().animate(elattrs[+(now = !now)], 4000);
+					//el.stop().animate(elattrs[+(now = !now)], 4000);
 			})();
 			// box2
 			(function () {
-				var path1 = "M0,0l100,0 -200,1080 -100,0";
+				var path1 = "M0,0l200,0 -1000,1080 -200,0";
 				var el = r.path(path1).attr({fill: "#fff", stroke:"none"}),
-					elattrs = [{transform: "t6000,12r0s50"}, {transform: ""}]
+					elattrs = [{transform: "t9000,40r0s50"}, {transform: ""}],
 					now = 1;
-					el.stop().animate(elattrs[+(now = !now)], 4000);
+				el.stop().animate(elattrs[+(now = !now)], 3000);
 			})();
 			// box1
 			(function () {
-				var path1 = "M100,0l100,0 -200,1080 -100,0";
+				var path1 = "M100,0l200,0 -1000,1080 -200,0";
 				var el = r.path(path1).attr({fill: "#000", stroke:"none"}),
-					elattrs = [{transform: "t7000,4r0s50"}, {transform: ""}]
+					elattrs = [{transform: "t9000,40r0s50"}, {transform: ""}],
 					now = 1;
-					el.stop().animate(elattrs[+(now = !now)], 3000);
+				el.stop().animate(elattrs[+(now = !now)], 3000);
 			})();
-			(function(){
+			/*(function(){
 				var $container = $('#loading'),
 				$masks     = $container.find('.mask'),
 				maskLength = $masks.length,
@@ -88,11 +87,14 @@ $(document).ready(function(){
 						},3000);
 					});
 				}
-			})();
+			})();*/
 		},2000);
 	}
 	intro();
 	documentSize();
+	$("#contents").on("click", function(){
+		$("#preload").slideDown(1000);
+	});
 	$(window).resize(function(){
 		documentSize();
 	});

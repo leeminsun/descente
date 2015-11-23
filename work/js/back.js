@@ -45,7 +45,11 @@ $(document).ready(function(){
 					el.stop().animate(elattrs[+(now = !now)], 3000);
 			})();
 		},2000);
+		matrix(60,0,0,60,-950,-2948)
 
+		matrix(60,0,0,60,-1950,-2949)
+
+		matrix(60,0,0,60,-950,-2949)
 		/*
 		수정전 초기본..
 		(function () {
