@@ -1,0 +1,88 @@
+
+body {
+	width: 100%;
+	height: 100%;
+	 overflow-y: hidden;
+}
+body.loaded {
+	height: auto;
+	overflow-y: scroll;
+}
+body.loaded #contents {
+	display: block;
+}
+#viewport {
+	position: relative;
+	min-width: 1200px;
+	overflow: hidden;
+}
+#preload { 
+	position: relative; 
+	width: 100%;
+	height: 1080px;
+	overflow: hidden;
+}
+#loading {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 300;
+}
+#loading #pre-button { 
+	display: none; 
+	position: absolute; 
+	left: 50%; 
+	top: 50%; 
+	margin-left: -13.5%; 
+	margin-top: -6%; 
+	width: 27.08333%; 
+	height: 13.0370%; 
+	background: url('../img/intro-btn.png') no-repeat 50% 0;
+	background-size: contain;
+}
+#loading #pre-mask,
+#loading #pre-img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../img/intro-img1.jpg') no-repeat 50% 0;
+	background-size: cover; 
+}
+#intro {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#intro #holder {
+	position: absolute; 
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#intro #holder {
+	z-index: 300;
+}
+#intro #visual {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%; 
+	z-index: 200;
+	background: url('../img/img4.jpg') no-repeat 50% 0;
+	background-size: cover; 
+}
+
+#contents {
+	display: none;
+}
+#contents img {
+	width: 100%; 
+}
