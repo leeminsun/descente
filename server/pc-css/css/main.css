@@ -1,0 +1,141 @@
+
+body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	overflow-y: hidden;
+}
+#contents {
+	display: none;
+}
+body.loaded {
+	height: auto;
+	overflow-y: scroll;
+}
+body.loaded #contents {
+	display: block;
+}
+body.loaded #viewport {
+	min-width: 1200px;
+}
+.sr-only {
+	position: absolute;
+	left: -99999px;
+	top: -99999px;
+}
+#viewport {
+	position: relative;
+	overflow: hidden;
+}
+#preload { 
+	position: relative; 
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#loading {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 300;
+}
+#loading #pre-button { 
+	display: none; 
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -13.5%; 
+	margin-top: -6%; 
+	width: 27.08333%; 
+	height: 13.0370%; 
+	background: url('../img/intro-btn.png') no-repeat 50% 0;
+	background-size: contain;
+}
+#loading #pre-mask,
+#loading #pre-img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#loading #pre-img {
+	background: url('../img/intro-bg.jpg') no-repeat 50% 0;
+	background-size: cover; 
+}
+#loading #pre-mask {
+	display: none;
+	background: url('../img/intro-mask.jpg') no-repeat 50% 0;
+	background-size: cover; 
+}
+/* #loading #pre-img.on {
+ -webkit-clip-path: polygon(500px 0,1920px 0,1920px 1000px,0 1920px);
+}
+#loading #pre-mask.on {
+ -webkit-clip-path: polygon(1000px 0,1920px 0,1920px 1000px,0 1920px);
+} */
+#box1 {
+	position: absolute;
+	left: -1000px;
+	top: 0;
+	width: 500px;
+	height: 600px;
+	transform:skew(-60deg,0);
+	background: url('../img/intro-mask.jpg');
+}
+#box1.on {
+	transition-duration: 1.8s;
+	transform: translate(1000px,500px);
+
+
+}
+#box2 {
+	position: absolute;
+	left: -600px;
+	top: 0;
+	width: 500px;
+	height: 1080px;
+	transform:skew(-60deg,0);
+	background-color: #fff;
+}
+#intro #holder {
+	position: absolute; 
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#intro #holder {
+	z-index: 300;
+}
+#intro #visual {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../img/main-snowsulf.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+#intro #visual .action {
+	position: absolute; 
+	left: 72.91666%;
+	top: 70.6481%;
+}
+#intro #visual .action .button {
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: url('../img/btn-down.png') no-repeat 0 0;
+}
+#intro #visual .action .button:hover {
+	background: url('../img/btn-down-on.png') no-repeat 0 0;
+}
+
+#contents img {
+	display: block;
+	width: 100%; 
+}

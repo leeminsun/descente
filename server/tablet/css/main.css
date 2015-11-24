@@ -1,0 +1,81 @@
+
+body {
+	width: 100%;
+	height: 100%;
+}
+.sr-only {
+	position: absolute;
+	left: -99999px;
+	top: -99999px;
+}
+#viewport {
+	position: relative;
+	overflow: hidden;
+}
+#preload { 
+	position: relative; 
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#loading {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+#loading #pre-button { 
+	display: none; 
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -13.5%; 
+	margin-top: -6%; 
+	width: 27.08333%; 
+	height: 13.0370%; 
+	background: url('../img/intro-btn.png') no-repeat 50% 0;
+	background-size: contain;
+}
+#loading #pre-mask,
+#loading #pre-img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#loading #pre-img {
+	background: url('../img/intro-bg.jpg') no-repeat 50% 0;
+	background-size: cover; 
+}
+#loading #pre-mask {
+	display: none;
+	background: url('../img/intro-mask.jpg') no-repeat 50% 0;
+	background-size: cover; 
+}
+#intro #visual .action {
+	position: absolute; 
+	left: 72.51666%;
+	top: 70.6481%;
+}
+#intro #visual img {
+	width: 100%;
+}
+#intro #visual .action .button {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url('../img/btn-down.png') no-repeat 0 0;
+	background-size: cover;
+}
+#intro #visual .action .button:hover {
+	background: url('../img/btn-down-on.png') no-repeat 0 0;
+	background-size: cover;
+}
+#contents img {
+	display: block;
+	width: 100%; 
+}
